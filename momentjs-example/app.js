@@ -10,7 +10,7 @@ $(document).ready(function () {
     // Using moment format, there are different ways that we can display todays date!
     $("#date").text(moment());
     $("#date-formatted").text(moment().format());
-    $("#date-my").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    $("#date-my").text(moment().format("dddd, MMMM Do"));
 
     $("#day-week").text(moment().format('do'));
     $("#day-month").text(moment().format('Do'));
