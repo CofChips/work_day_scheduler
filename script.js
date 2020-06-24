@@ -5,7 +5,7 @@ console.log(moment());
 console.log(moment().format());
 
 var today = $("#currentDay").text(moment().format("dddd, MMMM Do"));
-// $("#test").text(seconds);
+
 
 var nineAm = $("#nineAm");
 var tenAm = $("#tenAm");
@@ -31,6 +31,42 @@ var fivePmSeconds = $("#fivePm").attr("data-value");
 
 var allTimesSeconds = [nineAmSeconds,tenAmSeconds,elevenAmSeconds,twelvePmSeconds,onePmSeconds,twoPmSeconds,threePmSeconds,fourPmSeconds,fivePmSeconds]
 
+var formNine = $("#formNine");
+var formTen = $("#formTen");
+var formEleven = $("#formEleven");
+var formTwelve = $("#formTwelve");
+var formOne = $("#formOne");
+var formTwo = $("#formTwo");
+var formThree = $("#formThree");
+var formFour = $("#formFour");
+var formFive = $("#formFive");
+
+var buttonNine = $("#buttonNine");
+var buttonTen = $("#buttonTen");
+var buttonEleven = $("#buttonEleven");
+var buttonTwelve = $("#buttonTwelve");
+var buttonOne = $("#buttonOne");
+var buttonTwo = $("#buttonTwo");
+var buttonThree = $("#buttonThree");
+var buttonFour = $("#buttonFour");
+var buttonFive = $("#buttonFive");
+
+var textNine = $("#nineAmText")
+
+var taskNine = "";
+
+init();
+
+// populates tasks with localStorage if there are values
+function init() {
+    $(textNine).text("");
+    var storedtask = localStorage.getItem("taskNine");
+    if (storedtask !== null) {
+        taskNine = storedtask;
+    }
+    repopulateTask();
+}
+
 console.log(allTimesSeconds[1]);
 
 
@@ -54,44 +90,43 @@ let updateSeconds = function () {
             $(allTimes[i].removeClass("past present"));
         }
     }
-    // if(nineAmSeconds<sumSeconds){
-    //     $(nineAm).addClass("past");
-    // }
 
-    $("#test").text(sumSeconds);
 }
 
-
-    // To initally set the times, we will call the functions
-    // updateTime();
-    // updateHour();
-    // updateMinutes();
-    updateSeconds();
-    // countdown();
-
-    // To continuously call the functions, we will use setInterval
-    // setInterval(updateTime, 1000);
-    // setInterval(updateHour, 1000);
-    // setInterval(updateMinutes, 1000);
-    setInterval(updateSeconds, 1000);
-    // setInterval(countdown, 1);
+$(buttonNine).on("click", function(){
+    event.preventDefault();
+    var task = $(formNine).val();
+    localStorage.setItem("taskNine", task);
+    init();
+    $(formNine).val("");
 
 })
 
-// var imageContainer = document.querySelector(".img-container");
+$(formNine).on("click", function(){
+    event.preventDefault();
+    $(textNine).text("");
+    
 
-// imageContainer.addEventListener("click", function(event) {
-//   var element = event.target;
+})
 
-//   if (element.matches("img")) {
-//     var state = element.getAttribute("data-state");
 
-//     if (state === "still") {
-//       element.setAttribute("data-state", "animate");
-//       element.setAttribute("src", element.getAttribute("data-animate"));
-//     } else if (state === "animate") {
-//       element.setAttribute("data-state", "still");
-//       element.setAttribute("src", element.getAttribute("data-still"));
-//     }
-//   }
-// });
+
+function repopulateTask() {
+    // formNine = "";
+    // // console.log(highScoreList);
+    // // for (var i = 0; i < highScoreList.length; i++) {
+    // //     var currentIndex = highScoreList[i];
+    // //     var li = document.createElement("li");
+    // //     li.innerHTML = currentIndex.initials + " - " + highScoreList[i].score;
+    // //     highScoreListEl.append(li);
+    $(textNine).text(taskNine);
+    }
+
+
+    updateSeconds();
+
+    setInterval(updateSeconds, 1000);
+
+
+})
+
