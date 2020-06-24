@@ -51,16 +51,34 @@ var buttonThree = $("#buttonThree");
 var buttonFour = $("#buttonFour");
 var buttonFive = $("#buttonFive");
 
-var textNine = $("#nineAmText")
+var textNine = $("#nineAmText");
+var textTen = $("#nineAmText");
+var textEleven = $("#nineAmText");
+var textTwelve = $("#nineAmText");
+var textOne = $("#nineAmText");
+var textTwo = $("#nineAmText");
+var textThree = $("#nineAmText");
+var textFour = $("#nineAmText");
+var textFive = $("#nineAmText");
 
 var taskNine = "";
+var taskTen = "";
+var taskEleven = "";
+var taskTwelve = "";
+var taskOne = "";
+var taskTwo = "";
+var taskThree = "";
+var taskFour = "";
+var taskFive = "";
+
+var keyNine="taskNine";
 
 init();
 
 // populates tasks with localStorage if there are values
 function init() {
     $(textNine).text("");
-    var storedtask = localStorage.getItem("taskNine");
+    var storedtask = localStorage.getItem(keyNine);
     if (storedtask !== null) {
         taskNine = storedtask;
     }
