@@ -39,8 +39,7 @@ let updateSeconds = function () {
     let todayHours = moment().hour();
     let todaySeconds = todayHours * 60 * 60;
     let thisSecond = moment().second();
-    let sumSeconds = 48200;
-    // thisSecond + todaySeconds;
+    let sumSeconds = thisSecond + todaySeconds;
     for(var i = 0; i < allTimesSeconds.length; i++){
         if(allTimesSeconds[i]<sumSeconds){
             $(allTimes[i]).addClass("past");
