@@ -7,6 +7,18 @@ console.log(moment().format());
 var today = $("#currentDay").text(moment().format("dddd, MMMM Do"));
 // $("#test").text(seconds);
 
+var nineAm = $("#nineAm");
+var tenAm = $("#tenAm");
+var elevenAm = $("#elevenAm");
+var twelvePm = $("#twelvePm");
+var onePm = $("#onePm");
+var twoPm = $("#twoPm");
+var threePm = $("#threePm");
+var fourPm = $("#fourPm");
+var fivePm = $("#fivePm");
+
+var allTimes = [nineAm,tenAm,elevenAm,twelvePm,onePm,twoPm,threePm,fourPm,fivePm]
+
 var nineAmSeconds = $("#nineAm").attr("data-value");
 var tenAmSeconds = $("#tenAm").attr("data-value");
 var elevenAmSeconds = $("#elevenAm").attr("data-value");
@@ -27,7 +39,22 @@ let updateSeconds = function () {
     let todayHours = moment().hour();
     let todaySeconds = todayHours * 60 * 60;
     let thisSecond = moment().second();
-    let sumSeconds = thisSecond + todaySeconds;
+    let sumSeconds = 48200;
+    // thisSecond + todaySeconds;
+    for(var i = 0; i < allTimesSeconds.length; i++){
+        if(allTimesSeconds[i]<sumSeconds){
+            $(allTimes[i]).addClass("past");
+            $(allTimes[i]).removeClass("present future");
+        }
+        else if(allTimesSeconds[i]>=sumSeconds && allTimesSeconds[i]-3599<=sumSeconds){
+            $(allTimes[i].addClass("present"));
+            $(allTimes[i].removeClass("past future"));
+        }
+        else{
+            $(allTimes[i].addClass("future"));
+            $(allTimes[i].removeClass("past present"));
+        }
+    }
     // if(nineAmSeconds<sumSeconds){
     //     $(nineAm).addClass("past");
     // }
