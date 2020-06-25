@@ -41,6 +41,8 @@ $(document).ready(function () {
     var formFour = $("#formFour");
     var formFive = $("#formFive");
 
+    var allForm = [formNine,formTen,formEleven,formTwelve,formOne,formTwo,formThree,formFour,formFive]
+
     var buttonNine = $("#buttonNine");
     var buttonTen = $("#buttonTen");
     var buttonEleven = $("#buttonEleven");
@@ -99,53 +101,53 @@ $(document).ready(function () {
         var storedtask = localStorage.getItem(allKey[0]);
         if (storedtask !== null) {
             allTask[0] = storedtask;
-            $(allText[0]).text(allTask[0]);
+            $(allForm[0]).text(allTask[0]);
         }
         var storedtask = localStorage.getItem(allKey[1]);
         if (storedtask !== null) {
             allTask[1] = storedtask;
             console.log(taskNine);
-            $(allText[1]).text(allTask[1]);
+            $(allForm[1]).text(allTask[1]);
         }
         var storedtask = localStorage.getItem(allKey[2]);
         if (storedtask !== null) {
             allTask[2] = storedtask;
-            $(allText[2]).text(allTask[2]);
+            $(allForm[2]).text(allTask[2]);
         }
         var storedtask = localStorage.getItem(allKey[3]);
         if (storedtask !== null) {
             allTask[3] = storedtask;
-            $(allText[3]).text(allTask[3]);
+            $(allForm[3]).text(allTask[3]);
         }
 
         var storedtask = localStorage.getItem(allKey[4]);
         if (storedtask !== null) {
             allTask[4] = storedtask;
-            $(allText[4]).text(allTask[4]);
+            $(allForm[4]).text(allTask[4]);
         }
 
         var storedtask = localStorage.getItem(allKey[5]);
         if (storedtask !== null) {
             allTask[5] = storedtask;
-            $(allText[5]).text(allTask[5]);
+            $(allForm[5]).text(allTask[5]);
         }
 
         var storedtask = localStorage.getItem(allKey[6]);
         if (storedtask !== null) {
             allTask[6] = storedtask;
-            $(allText[6]).text(allTask[6]);
+            $(allForm[6]).text(allTask[6]);
         }
 
         var storedtask = localStorage.getItem(allKey[7]);
         if (storedtask !== null) {
             allTask[7] = storedtask;
-            $(allText[7]).text(allTask[7]);
+            $(allForm[7]).text(allTask[7]);
         }
 
         var storedtask = localStorage.getItem(allKey[8]);
         if (storedtask !== null) {
             allTask[8] = storedtask;
-            $(allText[8]).text(allTask[8]);
+            $(allForm[8]).text(allTask[8]);
         }
     }
 
@@ -200,7 +202,7 @@ $(document).ready(function () {
         var task = $(formNine).val();
         localStorage.setItem("taskNine", task);
         init();
-        $(formNine).val("");
+        // $(formNine).val("");
     })
 
 
@@ -209,7 +211,7 @@ $(document).ready(function () {
         var task = $(formTen).val();
         localStorage.setItem("taskTen", task);
         init();
-        $(formTen).val("");
+        // $(formTen).val("");
     })
 
     $(buttonEleven).on("click", function () {
@@ -217,7 +219,7 @@ $(document).ready(function () {
         var task = $(formEleven).val();
         localStorage.setItem("taskEleven", task);
         init();
-        $(formEleven).val("");
+        // $(formEleven).val("");
     })
 
     $(buttonTwelve).on("click", function () {
@@ -225,7 +227,7 @@ $(document).ready(function () {
         var task = $(formTwelve).val();
         localStorage.setItem("taskTwelve", task);
         init();
-        $(formTwelve).val("");
+        // $(formTwelve).val("");
     })
 
     $(buttonOne).on("click", function () {
@@ -233,7 +235,7 @@ $(document).ready(function () {
         var task = $(formOne).val();
         localStorage.setItem("taskOne", task);
         init();
-        $(formOne).val("");
+        // $(formOne).val("");
     })
 
     $(buttonTwo).on("click", function () {
@@ -241,7 +243,7 @@ $(document).ready(function () {
         var task = $(formTwo).val();
         localStorage.setItem("taskTwo", task);
         init();
-        $(formTwo).val("");
+        // $(formTwo).val("");
     })
 
     $(buttonThree).on("click", function () {
@@ -249,7 +251,7 @@ $(document).ready(function () {
         var task = $(formThree).val();
         localStorage.setItem("taskThree", task);
         init();
-        $(formThree).val("");
+        // $(formThree).val("");
     })
 
     $(buttonFour).on("click", function () {
@@ -257,7 +259,7 @@ $(document).ready(function () {
         var task = $(formFour).val();
         localStorage.setItem("taskFour", task);
         init();
-        $(formFour).val("");
+        // $(formFour).val("");
     })
 
     $(buttonFive).on("click", function () {
@@ -265,53 +267,53 @@ $(document).ready(function () {
         var task = $(formFive).val();
         localStorage.setItem("taskFive", task);
         init();
-        $(formFive).val("");
+        // $(formFive).val("");
     })
 
-    $(formNine).on("click", function () {
-        event.preventDefault();
-        $(textNine).text("");
-    })
+    // $(formNine).on("click", function () {
+    //     event.preventDefault();
+    //     $(textNine).text("");
+    // })
 
-    $(formTen).on("click", function () {
-        event.preventDefault();
-        $(textTen).text("");
-    })
+    // $(formTen).on("click", function () {
+    //     event.preventDefault();
+    //     $(textTen).text("");
+    // })
 
-    $(formEleven).on("click", function () {
-        event.preventDefault();
-        $(textEleven).text("");
-    })
+    // $(formEleven).on("click", function () {
+    //     event.preventDefault();
+    //     $(textEleven).text("");
+    // })
 
-    $(formTwelve).on("click", function () {
-        event.preventDefault();
-        $(textTwelve).text("");
-    })
+    // $(formTwelve).on("click", function () {
+    //     event.preventDefault();
+    //     $(textTwelve).text("");
+    // })
 
-    $(formOne).on("click", function () {
-        event.preventDefault();
-        $(textOne).text("");
-    })
+    // $(formOne).on("click", function () {
+    //     event.preventDefault();
+    //     $(textOne).text("");
+    // })
 
-    $(formTwo).on("click", function () {
-        event.preventDefault();
-        $(textTwo).text("");
-    })
+    // $(formTwo).on("click", function () {
+    //     event.preventDefault();
+    //     $(textTwo).text("");
+    // })
 
-    $(formThree).on("click", function () {
-        event.preventDefault();
-        $(textThree).text("");
-    })
+    // $(formThree).on("click", function () {
+    //     event.preventDefault();
+    //     $(textThree).text("");
+    // })
 
-    $(formFour).on("click", function () {
-        event.preventDefault();
-        $(textFour).text("");
-    })
+    // $(formFour).on("click", function () {
+    //     event.preventDefault();
+    //     $(textFour).text("");
+    // })
 
-    $(formFive).on("click", function () {
-        event.preventDefault();
-        $(textFive).text("");
-    })
+    // $(formFive).on("click", function () {
+    //     event.preventDefault();
+    //     $(textFive).text("");
+    // })
 
 
 
