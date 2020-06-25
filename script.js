@@ -41,7 +41,7 @@ $(document).ready(function () {
     var formFour = $("#formFour");
     var formFive = $("#formFive");
 
-    var allForm = [formNine,formTen,formEleven,formTwelve,formOne,formTwo,formThree,formFour,formFive]
+    var allForm = [formNine, formTen, formEleven, formTwelve, formOne, formTwo, formThree, formFour, formFive]
 
     var buttonNine = $("#buttonNine");
     var buttonTen = $("#buttonTen");
@@ -162,8 +162,8 @@ $(document).ready(function () {
 
 
 
-        
-    
+
+
 
 
     console.log(allKey[0]);
@@ -174,7 +174,7 @@ $(document).ready(function () {
     // console.log(allTimesSeconds[1]);
 
 
-
+// dynamically updates classes for time elements
     let updateSeconds = function () {
         let todayHours = moment().hour();
         let todaySeconds = todayHours * 60 * 60;
@@ -194,7 +194,6 @@ $(document).ready(function () {
                 $(allTimes[i].removeClass("past present"));
             }
         }
-
     }
 
     $(buttonNine).on("click", function () {
